@@ -1,0 +1,25 @@
+<p>add-publishers works!</p>
+<div style="padding-left: 100px;">
+    <h1 [ngClass]="isPink? 'title-pink':'title-skyblue'"> Add Publishers</h1>
+    <form [formGroup]="publishersForm" (ngSubmit)="savePublisher()">
+        <div style= "margin: 20px; font-size:x-large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+          <label for="name" [ngClass]="isPink? 'title-pink':'title-skyblue'">Name:</label>
+          <input type="text" id="name" formControlName="name" />
+        </div>
+        <div style= "margin: 20px; font-size: x-large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+          <label for="address" [ngClass]="isPink? 'title-pink':'title-skyblue'">Address:</label>
+          <input type="text" id="address" formControlName="address" />
+        </div>
+        <div style= "margin: 20px; font-size: x-large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+          <label for="phone" [ngClass]="isPink? 'title-pink':'title-skyblue'">Phone:</label>
+          <input type="text" id="phone" formControlName="phone" />
+        </div>
+        <div style= "margin: 20px; font-size: x-large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+            <label for="email" [ngClass]="isPink? 'title-pink':'title-skyblue'">Email:</label>
+            <input type="text" id="email" formControlName="email" />
+          </div>
+        <button type="submit">Save</button>
+      </form>
+</div>
+<h3 [ngClass]="isPink? 'title-pink':'title-skyblue'"> Form status: {{publishersForm.valid}}</h3>
+<h3 [ngClass]="isPink? 'title-pink':'title-skyblue'"> Form json: {{publishersForm.value | json}}</h3>

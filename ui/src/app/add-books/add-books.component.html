@@ -1,0 +1,45 @@
+
+<div style="padding-left: 100px;">
+    <h1 [ngClass]="isPink? 'title-pink':'title-skyblue'"> Add Books</h1>
+    <form [formGroup]="booksForm" (ngSubmit)="saveBook()">
+        <div style= "margin: 20px; font-size:x-large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+          <label for="title" [ngClass]="isPink? 'title-pink':'title-skyblue'">Title:</label>
+          <input type="text" id="title" formControlName="title" />
+        </div>
+        <div style= "margin: 20px; font-size: x-large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+          <label for="author" [ngClass]="isPink? 'title-pink':'title-skyblue'">Author:</label>
+          <input type="text" id="author" formControlName="author" />
+        </div>
+        <div style= "margin: 20px; font-size: x-large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+          <label for="isbn" [ngClass]="isPink? 'title-pink':'title-skyblue'">ISBN:</label>
+          <input type="text" id="isbn" formControlName="isbn" />
+        </div>
+        <div style= "margin: 20px; font-size: x-large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+          <label for="publicationDate" [ngClass]="isPink? 'title-pink':'title-skyblue'">Publication Date:</label>
+          <input type="text" id="publicationDate" formControlName="publicationDate" />
+        </div>
+        <div style= "margin: 20px; font-size: x-large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+          <label for="publisher" [ngClass]="isPink? 'title-pink':'title-skyblue'">Publisher:</label>
+          <input type="text" id="publisher" formControlName="publisher" />
+        </div>
+        <div style= "margin: 20px; font-size: x-large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+          <label for="copies" [ngClass]="isPink? 'title-pink':'title-skyblue'">Copies:</label>
+          <input type="number" id="copies" formControlName="copies" />
+        </div>
+        <div style= "margin: 20px; font-size: x-large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+          <label for="category" [ngClass]="isPink? 'title-pink':'title-skyblue'">Category:</label>
+          <input type="text" id="category" formControlName="category" />
+        </div>
+        <div style= "margin: 20px; font-size: x-large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+          <label for="genre" [ngClass]="isPink? 'title-pink':'title-skyblue'">Genre:</label>
+          <input type="text" id="genre" formControlName="genre" />
+        </div>
+        <div style= "margin: 20px; font-size: x-large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+          <label for="subgenre" [ngClass]="isPink? 'title-pink':'title-skyblue'">Subgenre:</label>
+          <input type="text" id="subgenre" formControlName="subgenre" />
+        </div>
+        <button type="submit">Save</button>
+      </form>
+</div>
+<h3 [ngClass]="isPink? 'title-pink':'title-skyblue'"> Form status: {{booksForm.valid}}</h3>
+<h3 [ngClass]="isPink? 'title-pink':'title-skyblue'"> Form json: {{booksForm.value | json}}</h3>

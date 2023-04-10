@@ -1,0 +1,21 @@
+<p>add-admins works!</p>
+<div style="padding-left: 100px;">
+    <h1 [ngClass]="isPink? 'title-pink':'title-skyblue'"> Add Admins</h1>
+    <form [formGroup]="adminsForm" (ngSubmit)="saveAdmin()">
+        <div style= "margin: 20px; font-size:x-large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+          <label for="name" [ngClass]="isPink? 'title-pink':'title-skyblue'">Name:</label>
+          <input type="text" id="name" formControlName="name" />
+        </div>
+        <div style= "margin: 20px; font-size: x-large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+          <label for="username" [ngClass]="isPink? 'title-pink':'title-skyblue'">Username:</label>
+          <input type="text" id="username" formControlName="username" />
+        </div>
+        <div style= "margin: 20px; font-size: x-large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+          <label for="password" [ngClass]="isPink? 'title-pink':'title-skyblue'">Password:</label>
+          <input type="text" id="password" formControlName="password" />
+        </div>
+        <button type="submit">Save</button>
+      </form>
+</div>
+<h3 [ngClass]="isPink? 'title-pink':'title-skyblue'"> Form status: {{adminsForm.valid}}</h3>
+<h3 [ngClass]="isPink? 'title-pink':'title-skyblue'"> Form json: {{adminsForm.value | json}}</h3>

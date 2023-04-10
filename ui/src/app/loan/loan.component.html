@@ -1,0 +1,40 @@
+<p>loan works!</p>
+<h1 [ngClass]="isPink? 'title-pink':'title-skyblue'" >{{title}}</h1>
+
+<h2 *ngIf="loans.length<1">No Data</h2>
+<div style= "margin: 20px; float:right">
+  <button class="button" (click)="addLoans()"> Add Loan</button>
+</div>
+<table >
+    <thead>
+      <tr>
+        <th>ID</th> 
+        <th>BookId</th>
+        <th>StudentId</th>
+        <th>CheckOutDate</th>
+        <th>DueDate</th>
+        <th>ReturnDate</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="loans.length > 0">
+      <tr *ngFor="let loan of loans">
+        <td>{{loan.id}}</td>
+        <td>{{loan.bookId}}</td>
+        <td>{{loan.studentId}}</td>
+        <td>{{loan.checkoutDate}}</td>
+        <td>{{loan.dueDate}}</td>
+        <td>{{loan.returnDate}}</td>
+        <td>
+          <button (click)="deleteLoan(loan.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div div style="
+align-self: center;
+margin: 20px;
+width: 50%;
+float:right;
+">
+    <img src="assets/images/mimg.jpg" style="width:5cm; height:5cm; align-self: center; border-radius: 5cm; border-style: double; border-width:5mm; ">
+</div>

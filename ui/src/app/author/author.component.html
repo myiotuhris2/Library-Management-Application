@@ -1,0 +1,38 @@
+<p>author works!</p>
+
+
+<h1 [ngClass]="isPink? 'title-pink':'title-skyblue'" >{{title}}</h1>
+
+<h2 *ngIf="authors.length<1">No Data</h2>
+<div style= "margin: 20px; float:right">
+  <button class="button" (click)="addAuthors()"> Add Author</button>
+</div>
+<table >
+    <thead>
+      <tr>
+        <th>ID</th> 
+        <th>Name</th>
+        <th>Nationality</th>
+        <th>BirthDate</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="authors.length > 0">
+      <tr *ngFor="let author of authors">
+        <td>{{author.id}}</td>
+        <td>{{author.name}}</td>
+        <td>{{author.nationality}}</td>
+        <td>{{author.birthDate}}</td>
+        <td>
+          <button (click)="deleteAuthor(author.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div div style="
+align-self: center;
+margin: 20px;
+width: 50%;
+float:right;
+">
+    <img src="assets/images/myimg6.jpg" style="width:5cm; height:5cm; align-self: center; border-radius: 5cm; border-style: double; border-width:5mm; ">
+</div>

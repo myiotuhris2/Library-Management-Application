@@ -1,0 +1,29 @@
+<p>add-loans works!</p>
+<div style="padding-left: 100px;">
+    <h1 [ngClass]="isPink? 'title-pink':'title-skyblue'"> Add Loans</h1>
+    <form [formGroup]="loansForm" (ngSubmit)="saveLoan()">
+        <div style= "margin: 20px; font-size:x-large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+          <label for="bookId" [ngClass]="isPink? 'title-pink':'title-skyblue'">BookId:</label>
+          <input type="number" id="bookId" formControlName="bookId" />
+        </div>
+        <div style= "margin: 20px; font-size: x-large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+          <label for="studentId" [ngClass]="isPink? 'title-pink':'title-skyblue'">StudentId:</label>
+          <input type="number" id="studentId" formControlName="studentId" />
+        </div>
+        <div style= "margin: 20px; font-size: x-large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+          <label for="checkoutDate" [ngClass]="isPink? 'title-pink':'title-skyblue'">CheckOutDate:</label>
+          <input type="text" id="checkoutDate" formControlName="checkoutDate" />
+        </div>
+        <div style= "margin: 20px; font-size: x-large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+            <label for="dueDate" [ngClass]="isPink? 'title-pink':'title-skyblue'">DueDate:</label>
+            <input type="text" id="dueDate" formControlName="dueDate" />
+          </div>
+          <div style= "margin: 20px; font-size: x-large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+            <label for="returnDate" [ngClass]="isPink? 'title-pink':'title-skyblue'">ReturnDate:</label>
+            <input type="text" id="returnDate" formControlName="returnDate" />
+          </div>
+        <button type="submit">Save</button>
+      </form>
+</div>
+<h3 [ngClass]="isPink? 'title-pink':'title-skyblue'"> Form status: {{loansForm.valid}}</h3>
+<h3 [ngClass]="isPink? 'title-pink':'title-skyblue'"> Form json: {{loansForm.value | json}}</h3>

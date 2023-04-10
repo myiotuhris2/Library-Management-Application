@@ -1,0 +1,28 @@
+<div style="padding-left: 100px;">
+    <h1 [ngClass]="isPink? 'title-pink':'title-skyblue'"> Add Students</h1>
+    <form [formGroup]="studentsForm" (ngSubmit)="saveStudent()">
+        <div style= "margin: 20px; font-size:x-large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+          <label for="name" [ngClass]="isPink? 'title-pink':'title-skyblue'">Name:</label>
+          <input type="text" id="name" formControlName="name" />
+        </div>
+        <div style= "margin: 20px; font-size: x-large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+          <label for="department" [ngClass]="isPink? 'title-pink':'title-skyblue'">Department:</label>
+          <input type="text" id="department" formControlName="department" />
+        </div>
+        <div style= "margin: 20px; font-size: x-large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+          <label for="rollNumber" [ngClass]="isPink? 'title-pink':'title-skyblue'">RollNumber:</label>
+          <input type="text" id="rollNumber" formControlName="rollNumber" />
+        </div>
+        <div style= "margin: 20px; font-size: x-large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+            <label for="birthDate" [ngClass]="isPink? 'title-pink':'title-skyblue'">BirthDate:</label>
+            <input type="text" id="birthDate" formControlName="birthDate" />
+          </div>
+          <div style= "margin: 20px; font-size: x-large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+            <label for="mobileNumber" [ngClass]="isPink? 'title-pink':'title-skyblue'">MobileNumber:</label>
+            <input type="text" id="mobileNumber" formControlName="mobileNumber" />
+          </div>
+        <button type="submit">Save</button>
+      </form>
+</div>
+<h3 [ngClass]="isPink? 'title-pink':'title-skyblue'"> Form status: {{studentsForm.valid}}</h3>
+<h3 [ngClass]="isPink? 'title-pink':'title-skyblue'"> Form json: {{studentsForm.value | json}}</h3>

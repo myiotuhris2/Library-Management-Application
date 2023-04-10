@@ -1,0 +1,41 @@
+<p>publishers works!</p>
+
+
+<h1 [ngClass]="isPink? 'title-pink':'title-skyblue'" >{{title}}</h1>
+
+<h2 *ngIf="publishers.length<1">No Data</h2>
+<div style= "margin: 20px; float:right">
+  <button class="button" (click)="addPublishers()"> Add Publisher</button>
+</div>
+<table >
+    <thead>
+      <tr>
+        <th>ID</th> 
+        <th>Name</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Email</th>
+        
+      </tr>
+    </thead>
+    <tbody *ngIf="publishers.length > 0">
+      <tr *ngFor="let publisher of publishers">
+        <td>{{publisher.id}}</td>
+        <td>{{publisher.name}}</td>
+        <td>{{publisher.address}}</td>
+        <td>{{publisher.phone}}</td>
+        <td>{{publisher.email}}</td> 
+        <td>
+          <button (click)="deletePublisher(publisher.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div div style="
+align-self: center;
+margin: 20px;
+width: 50%;
+float:right;
+">
+    <img src="assets/images/myimg5.png" style="width:5cm; height:5cm; align-self: center; border-radius: 5cm; border-style: double; border-width:5mm; ">
+</div>
